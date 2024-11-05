@@ -1,0 +1,10 @@
+venv
+.idea
+.dev
+.venv
+.env
+media/
+__pycache__
+.pytest_cache
+.vscode/
+acme.json
