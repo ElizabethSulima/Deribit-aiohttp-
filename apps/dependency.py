@@ -2,6 +2,7 @@ from typing import Annotated, AsyncIterator
 
 import jwt
 import models
+import schemas
 from crud import get_user
 from fastapi import Depends, security, status
 from fastapi.exceptions import HTTPException
@@ -49,4 +50,4 @@ async def get_current_user(
     return user
 
 
-GetCurrentUser = Annotated[models.User, Depends(get_user)]
+GetCurrentUser = Annotated[schemas.UserResponse, Depends(get_current_user)]

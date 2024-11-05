@@ -32,8 +32,6 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBIT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBIT_PASSWORD}
-    ports:
-      - 5672:5672
     healthcheck:
       test: rabbitmq-diagnostics -q ping
       interval: 30s
@@ -51,3 +49,7 @@ services:
     command: celery -A celery_app worker -l INFO
     env_file:
       - .env
+
+  redis:
+    image: redis:alpine
+    restart: always

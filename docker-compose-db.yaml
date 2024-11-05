@@ -16,3 +16,9 @@ services:
       RABBITMQ_DEFAULT_PASS: ${RABBIT_PASSWORD}
     ports:
       - 5672:5672
+
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6379:6379
