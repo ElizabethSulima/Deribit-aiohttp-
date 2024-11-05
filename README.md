@@ -1,14 +1,32 @@
-# Асинхронный клиент для криптобиржи Deribit (https://docs.deribit.com/) на aiohhtp.
+# REST-API для операций над изображениями на FastAPI (pillow)
 
-## Cypto Price Tracker
+### Описание
 
-### Установка
+Сервис для конвертации изображений.
+
+## Установка
 
 1. Клонируйте репозиторий
 2. Установите зависимости:
    bash
    pip install -r requirements.txt
+3. poetry install
+4. pre-commit install
+5. pre-commit run --all-files
 
-## Заключение
+## Запуск БД
 
-С помощью этого руководства вы сможете создать асинхронного клиента для получения цен на криптовалюту с Deribit и API для работы с сохранёнными данными. Не забудьте тщательно протестировать каждую часть и убедиться, что всё функционирует должным образом.
+COMPOSE_FILE=""
+DB_NAME=""
+DB_USER=""
+DB_PASSWORD=""
+
+## Команды для docker compose
+
+docker compose up --build -d
+docker compose down -v
+docker compose exec имя*контейнера psql -U имя*пользователя имя_бд
+
+## Запуск тестов
+
+pytest
